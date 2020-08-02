@@ -1,0 +1,85 @@
+<template>
+    <div class="global">
+    <h1>{title}</h1>
+    <h3>Shoes</h3>
+
+    <div class="container">
+
+      <div key={label}><p>Find Labels</p></div>
+
+
+        <div class="filters" >
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label">Filters</legend>
+                <div class="slds-form-element__control">
+                  <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-76" value="checkbox-unique-id-76" checked="" onclick={checkboxCheck}/>
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-76">
+                      <span class="slds-checkbox_faux"></span>
+                      <span class="slds-form-element__label">boots</span>
+                    </label>
+                  </div>
+                  <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-77" value="checkbox-unique-id-77" />
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-77">
+                      <span class="slds-checkbox_faux"></span>
+                      <span class="slds-form-element__label">sneakers</span>
+                    </label>
+                  </div>
+                  <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-78" value="checkbox-unique-id-77" />
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-78">
+                      <span class="slds-checkbox_faux"></span>
+                      <span class="slds-form-element__label">sandals</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        </div>
+
+
+        <!-- To iterate shoes items !-->
+        <div class="shop-items">
+           
+            <lightning-layout-item size="12" >
+                <template for:each={items} for:item="item">
+                    <div class="shop-item" key={image}>
+                        <div class="descriptions" key={descriptions}>
+                                <img src="a.png" class="item-img" key={items.img}>
+                                <span class="item-description" key={items.Id}>{item.id}</span>
+                                <div class="item-details" key={items.details}>
+                                    <span class="item-price" key={items.price}>
+                                        {item.price}
+                                    </span>
+                                  </div>
+                                  <button class="add-to-cart-btn" key={items.btn} onclick={addtoCartButtons}>Add To Cart</button>
+                        </div>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </div>
+
+        <!-- Total -->
+        <section class="total-container">
+            <h2 class="cart-header">Cart</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Item</span>
+                <span class="cart-price cart-header cart-column">Price</span>
+                <span class="cart-quantity cart-header cart-column">Quantity</span>
+            </div>
+
+            <div class="cart-items">
+            </div>
+
+            <div class="cart-total">
+                <strong class="cart-total-title"> Total</strong>
+                <span class="cart-quantity cart-header cart-colum"> €0</span>
+            </div>
+
+                 <!-- Purchase -->
+            <button class="cart-total-price">Purchase</button>
+        </section>
+    </div>
+</template>
+        

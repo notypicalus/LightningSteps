@@ -1,0 +1,148 @@
+.global{
+    border: springgreen 2px solid;
+    margin: 0 auto;
+}
+
+h1 {
+    color: lightblue;
+    font-size: 3rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    color: #FFF;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Big container wraps the whole blocks */
+
+.container {
+    border: 6px solid azure;
+    margin: auto;
+}
+
+/* shoes filter */
+
+
+/* shoes parent container */
+.shop-items {
+    border: brown 3px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* shoe img container 
+child container */
+.shop-item {
+    border: cornflowerblue 3px solid;
+    width: 140px;
+    height: 140px;
+    margin: 10px auto;
+}
+
+/* Individual img css */
+.shoes {
+    width: 166.53px;
+    height: 222.31px;
+    margin-right: 20px;
+    margin-left: 20px;
+    position: relative;
+    overflow: hidden;;
+}
+
+/* shoes description */
+
+.descriptions {
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Each shoes style */
+
+.item-description {
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+.item-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-price{
+    flex-grow: 1;
+    margin-bottom: 10px;
+    border: 1px blueviolet solid;
+}
+
+.add-to-cart-btn {
+    border: 1px red solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.total-container {
+    display: block;
+    border: #FFF 5px solid;
+}
+.cart-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width:45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width:35%;
+}
+
+.cart-total {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.cart-total-price {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
