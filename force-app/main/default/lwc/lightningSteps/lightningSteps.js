@@ -4,20 +4,22 @@ export default class LightningSteps extends LightningElement {
 
     @track
     title = 'Lightning Steps Shoe Store';
+    
+    filterItems = [];
 
-    @track initialItems = [];
+    checkedFilters = [];
 
     items = [
         {
             id: 'shoes1',
             name: 'Chelsea',
-            label: 'Boot',
+            label: 'boot',
             price: '€20,99',
         },
         {
             id: 'shoes2',
             name: 'Nike AirZoom Pegasus 37',
-            label: 'Running shoes',
+            label: 'running shoes',
             price: '€19,99'
         },
         {
@@ -28,63 +30,22 @@ export default class LightningSteps extends LightningElement {
         },
     ];
 
-    productsLabels = {
-        name: 'shoes filter',
-        labels: [],
-        price: [],
-        addLabels: function (label, price) {
-            this.labels.push(
-                {
-                label: label,
-                price: price
-            })
-        }
-    };
-
-    /* If one of checkboxs taken, then match with Filter function */ 
-    checkboxCheck (evt) {
-        let isChecked = this.querySelector('slds-checkbox');
-        console.log('checked!') 
-
-        /* sort the shoes based on the checkbox */
-    }
-
-    findLabels (label) {
-
-        const result = this.items.filter(item => item.includes(this.item.label))
-        console.log(result, 'result')
-        console.log(label, 'label')
-
-        if (result === 'boots') {
-            console.log('boots')
-
-        } 
-        else if (result === 'sneakers')
-        {
-
-            console.log('sneakers')
-
+    /* If one of checkboxs is taken, then match with Filter function */ 
+    checkboxChange (event) {
+        let eventValue = event.target.value;
+        let eventCheck = event.target.checked;
+        if (eventCheck) {
+            this.checkedFilters.push(eventValue);
         } else {
-            console.log('sandals')
-            
+            this.checkedFilters = this.checkedFilters.filter( filter => filter != eventValue);
         }
-        
+        this.setFilteredItems();
     }
 
-
-    /* Filter Objects in an Array and create a new Array */ 
-    findItems (item, query) {
-        let sortLabels = function () {
-            console.log(item);
-            /* find the labels */ 
-            let filteredLabels = this.items.filter(function(item, index){
-                let isLabelMatch = this.item.label.toLowerCase().includes(query.toLowerCase())
-                return isLabelMatch === this.item.label
-            })
-            }
-            return isLabelMatch;
-        }
-
+    setFilteredItems () {
+        //boot, checkbox
+        this.filterItems = this.items.filter(item => this.checkedFilters.includes(item.label));
+    }
 
         /* If you click add to cart button, then each item will be added to cart */
  

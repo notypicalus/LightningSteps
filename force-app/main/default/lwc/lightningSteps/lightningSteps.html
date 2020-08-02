@@ -5,29 +5,26 @@
 
     <div class="container">
 
-      <div key={label}><p>Find Labels</p></div>
-
-
         <div class="filters" >
             <fieldset class="slds-form-element">
                 <legend class="slds-form-element__legend slds-form-element__label">Filters</legend>
                 <div class="slds-form-element__control">
                   <div class="slds-checkbox">
-                    <input type="checkbox" name="options" id="checkbox-unique-id-76" value="checkbox-unique-id-76" checked="" onclick={checkboxCheck}/>
+                    <input type="checkbox" name="options" id="checkbox-unique-id-76" value="boot" onclick={checkboxChange}/>
                     <label class="slds-checkbox__label" for="checkbox-unique-id-76">
                       <span class="slds-checkbox_faux"></span>
-                      <span class="slds-form-element__label">boots</span>
+                      <span class="slds-form-element__label">boot</span>
                     </label>
                   </div>
                   <div class="slds-checkbox">
-                    <input type="checkbox" name="options" id="checkbox-unique-id-77" value="checkbox-unique-id-77" />
+                    <input type="checkbox" name="options" id="checkbox-unique-id-77" value="running shoes" onclick={checkboxChange}/>
                     <label class="slds-checkbox__label" for="checkbox-unique-id-77">
                       <span class="slds-checkbox_faux"></span>
-                      <span class="slds-form-element__label">sneakers</span>
+                      <span class="slds-form-element__label">running shoes</span>
                     </label>
                   </div>
                   <div class="slds-checkbox">
-                    <input type="checkbox" name="options" id="checkbox-unique-id-78" value="checkbox-unique-id-77" />
+                    <input type="checkbox" name="options" id="checkbox-unique-id-78" value="sandals" onclick={checkboxChange}/>
                     <label class="slds-checkbox__label" for="checkbox-unique-id-78">
                       <span class="slds-checkbox_faux"></span>
                       <span class="slds-form-element__label">sandals</span>
@@ -43,17 +40,20 @@
         <div class="shop-items">
            
             <lightning-layout-item size="12" >
-                <template for:each={items} for:item="item">
-                    <div class="shop-item" key={image}>
-                        <div class="descriptions" key={descriptions}>
-                                <img src="a.png" class="item-img" key={items.img}>
-                                <span class="item-description" key={items.Id}>{item.id}</span>
-                                <div class="item-details" key={items.details}>
-                                    <span class="item-price" key={items.price}>
+                <template for:each={filterItems} for:item="item" >
+                    <div class="shop-item" key={item.id}>
+                        <div class="descriptions" >
+                                <img src="a.png" class="item-img" >
+                                <span class="item-description">{item.id}</span>
+                                <div class="item-details">
+                                    <span class="item-price">
                                         {item.price}
                                     </span>
+                                    <span class="item-label">
+                                      {item.label}
+                                  </span>
                                   </div>
-                                  <button class="add-to-cart-btn" key={items.btn} onclick={addtoCartButtons}>Add To Cart</button>
+                                  <button class="add-to-cart-btn" onclick={addtoCartButtons}>Add To Cart</button>
                         </div>
                     </div>
                 </template>
