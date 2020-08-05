@@ -1,0 +1,30 @@
+//  { "records": [
+//      {
+//          "attributes": {
+//              "type": "Shoe__c",
+//              "referenceId": "Shoe__cRef1"
+//          },
+//          {
+
+//          }
+//      },
+//      {
+//             id: "shoes1",
+//             name: "Chelsea",
+//             label: "boot",
+//             price: "€20,99"
+//           },
+//     {
+//             id: "shoes2",
+//             name: "Nike AirZoom Pegasus 37",
+//             label: "running shoes",
+//             price: "€19,99"
+//     },
+//     {
+//             id: "shoes3",
+//             name: "Salt Water Sandals",
+//             label: "sandals",
+//             price: "€30,99"
+//     }
+//  ]
+//  }

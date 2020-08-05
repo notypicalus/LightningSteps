@@ -35,7 +35,7 @@
         </div>
 
 
-        <!-- To iterate shoes list !-->
+        <!-- To iterate shoes items !-->
         <div class="shop-items">
            
             <lightning-layout-item size="12" >
@@ -59,10 +59,14 @@
             </lightning-layout-item>
         </div>
 
-         <!-- Total -->
+        <!-- Total -->
         <section class="total-container">
             <h2 class="cart-header">Cart</h2>
-
+            <!-- <div class="cart-row"> d
+                <span class="cart-item cart-header cart-column">Item</span>
+                <span class="cart-price cart-header cart-column">Price</span>
+                <span class="cart-quantity cart-header cart-column">Quantity</span>
+            </div> -->
 
             <!-- items in the cart -->
 
@@ -85,7 +89,7 @@
             </div>
 
                  <!-- Purchase -->
-            <button class="cart-total-price" onclick={purchaseButton}>Purchase</button>
+            <button class="cart-total-price">Purchase</button>
         </section>
     </div>
 </template>

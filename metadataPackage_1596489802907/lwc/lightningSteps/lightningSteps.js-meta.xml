@@ -2,15 +2,10 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>47.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Lightning Steps</masterLabel>
-    <description>Lightning Steps demo component</description>
-
-    <!-- Target specifies which types of Lightning page the component can be added to -->
     <targets>
-        <target>lightning__AppPage</target>
-        <target>lightning__RecordPage</target>
-        <target>lightning__HomePage</target>
-        <target>lightning__Tab</target>
+        <!-- <target>lightning_AppPage</target>
+        <target>lightning_RecordPage</target> -->
+        <target>lightning_Homepage</target>
     </targets>
 </LightningComponentBundle>
 

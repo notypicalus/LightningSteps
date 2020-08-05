@@ -1,5 +1,4 @@
 import { LightningElement, track } from "lwc";
-import { throws } from "assert";
 
 export default class LightningSteps extends LightningElement {
   @track
@@ -10,8 +9,6 @@ export default class LightningSteps extends LightningElement {
   checkedFilters = [];
 
   cartItems = [];
-
-  itemsToPurchase = [];
 
   items = [
     {
@@ -39,17 +36,14 @@ export default class LightningSteps extends LightningElement {
   checkboxChange(event) {
     let eventValue = event.target.value;
     let eventCheck = event.target.checked;
-    if (eventCheck) {    /* If the checkbox is on, push the values to eventValue */
+    if (eventCheck) {
       this.checkedFilters.push(eventValue);
-      // console.log(eventValue, 'checked')
     } else {
       this.checkedFilters = this.checkedFilters.filter(
-        (filter) => filter != eventValue
-        );
-        // console.log(eventValue, 'unchecked');
+        (filter) => filter != eventValue   
+      );
     }
     this.setFilteredItems();       /* if the check box is checked and the checked item and item label is same? */
-    console.log(this.setFilteredItems, 'whats inside here')
   }
 
   setFilteredItems() {
@@ -67,52 +61,25 @@ export default class LightningSteps extends LightningElement {
 
   addtoCartButtons(event) {
     let clickedItemId = this.trimItemId(event.target.id);
-    console.log("<-id: " + clickedItemId);          /* findIndex() array method */
+    console.log("<-id: " + clickedItemId);
     let cartItemIndex = this.cartItems.findIndex(   /* We'll find the index of the items in the cart, array of [cartItems] */
-      (item) => item.id === clickedItemId      /* Item in the cart and clickedItemid is same, find the index */
+      (item) => item.id === clickedItemId      /* Item in the cart and clickedItemid is same? */
     );
-    if (cartItemIndex === -1) {     /* Why -1 findIndex method */
-      console.log(cartItemIndex, 'cartItemIndex and first item to the cart')
+    if (cartItemIndex === -1) {     /* Why -1 */
+      console.log(cartItemIndex[-1])
       const item = this.items.find((item) => item.id === clickedItemId);
-      console.log(item, 'First item object')
       this.cartItems.push({ qty: 1, ...item });
     } else {
       this.cartItems[cartItemIndex] = {
         ...this.cartItems[cartItemIndex],
         qty: this.cartItems[cartItemIndex].qty + 1
       };
-    } console.log(...this.cartItems, 'spread operator')
+    }
     this.filterItems = this.filterItems.filter(item => true);
-    console.log(this.filterItems, 'filterItems')
   }
 
   removeFromCart(event) {
     let clickedItemId = this.trimItemId(event.target.id);
-    // console.log(this.trimItemId, 'trimItemid')
-    // console.log(clickedItemId, 'clickedItemid')
     this.cartItems = this.cartItems.filter((item) => item.id != clickedItemId);
-  }
-
-  purchaseButton(event) {
-    let eventCheck = event.target.purchased;
-    if (eventCheck = true) { 
-      this.cartItems.push(this.itemsToPurchase);
-      
-      console.log(this.itemsToPurchase, 'purchase event')
-    } 
-    
-    // else {
-    //   this.checkedFilters = this.checkedFilters.filter(
-    //     (filter) => filter != eventValue
-    //     );
-    //     // console.log(eventValue, 'unchecked');
-    // }
-    // let clickedItemId = this.trimItemId(event.target.id)
-    // this.clickedItemId = this.cartItems.push((this.itemsToPurchase))
-    // console.log(this.cartItems, 'cartItems'
-    // this.cartItems = this.itemsToPurchase.filter((item) => item.id = clickedItemId);
-    // this.itemsToPurchase.push(itemsPurchased);
-    // this.itemsPurchased
-
-  }
+  } 
 };

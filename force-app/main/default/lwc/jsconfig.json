@@ -3,20 +3,8 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/productListItem": [
-                "productListItem/productListItem.js"
-            ],
             "c/lightningSteps": [
                 "lightningSteps/lightningSteps.js"
-            ],
-            "c/productListFilter": [
-                "productListFilter/productListFilter.js"
-            ],
-            "c/shoppingCart": [
-                "shoppingCart/shoppingCart.js"
-            ],
-            "c/addItem": [
-                "addItem/addItem.js"
             ]
         }
     },
